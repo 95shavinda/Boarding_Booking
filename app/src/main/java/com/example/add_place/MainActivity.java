@@ -20,7 +20,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button add;
+    Button add,click;
     ListView listView;
     Context context;
     TextView count;
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.addlist);
         count = findViewById(R.id.txtcount);
         boardingList = new ArrayList<>();
+        click = findViewById(R.id.b);
 
         boardingList = dbHandler.getAllPlaces();
 
@@ -93,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 builder.show();
+            }
+        });
+
+        click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,PlaceView.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +8,17 @@
     tools:context=".AddPlace"
     android:orientation="vertical"
     android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
@@ -23,11 +35,12 @@
 
     <EditText
         android:id="@+id/edit_name"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
+        android:background="#ffffff"
         android:ems="10"
         android:hint="name"
         android:inputType="textPersonName"
@@ -38,11 +51,12 @@
 
     <EditText
         android:id="@+id/edit_contact"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
+        android:background="#ffffff"
         android:ems="10"
         android:hint="contact"
         android:inputType="textPersonName"
@@ -53,11 +67,12 @@
 
     <EditText
         android:id="@+id/edit_address"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
+        android:background="#ffffff"
         android:ems="10"
         android:hint="address"
         android:inputType="textPersonName"
@@ -68,13 +83,14 @@
 
     <EditText
         android:id="@+id/edit_description"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:ems="10"
         android:hint="description"
+        android:background="#ffffff"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,10 +103,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="Add Place"
+        android:layout_marginLeft="60dp"
+        android:background="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_description"
         tools:ignore="MissingConstraints" />
 
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -25,6 +25,7 @@ public class DbHandler extends SQLiteOpenHelper {
     private static final String STARTED = "started";
     private static final String FINISHED = "finished";
 
+
     public DbHandler(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
     }
@@ -44,6 +45,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_TABLE_QUERY);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -101,6 +103,30 @@ public class DbHandler extends SQLiteOpenHelper {
             }while(cursor.moveToNext());
         }
         return boarding;
+    }
+
+    public List<Booking> getBookedList(){
+
+        List<Booking> booking = new ArrayList();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM User";
+
+        Cursor cursor = db.rawQuery(query,null);
+
+        if(cursor.moveToFirst()){
+            do{
+                Booking book = new Booking();
+
+                book.setUserId(cursor.getInt(0));
+                book.setUserName(cursor.getString(1));
+                book.setRooms(cursor.getString(2));
+                book.setBooked(cursor.getLong(3));
+                book.setBookFinished(cursor.getLong(4));
+
+                booking.add(book);
+            }while(cursor.moveToNext());
+        }
+        return booking;
     }
 
     public void deletePlace(int id){
