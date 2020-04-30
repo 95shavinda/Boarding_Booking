@@ -9,14 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateBooking"></activity>
+        <activity android:name=".Feedback"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".UpdateBooking" />
         <activity android:name=".BookedList" />
         <activity android:name=".BookingList" />
         <activity android:name=".SinglePlaceView" />
         <activity android:name=".PlaceView" />
         <activity android:name=".EditPlace" />
         <activity android:name=".AddPlace" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
